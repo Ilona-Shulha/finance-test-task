@@ -1,3 +1,14 @@
+# As a bonus:
+- visual effects to highlight positive or negative changes in the prices
+- filter for tickers with positive/negative price dynamics
+- not found page
+- added an incorrect index handler when going to a page Ticker
+- ticker page with annual dividend yield
+- search tickers by index/title
+
+PS. - Used indexes as an id, considering them absolutely unique
+
+
 
 # React Test Task
 

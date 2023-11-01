@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import AppRouter from './router/AppRouter';
+import { connectToSocket, disconnectFromSocket } from './store/slices/socketSlice';
+import { selectSocketStatus } from './store/selectors/selectors';
+import { fetchTickers } from './store/slices/tickerSlice';
+
+import './App.scss';
 
 function App() {
+  const connectionStatus = useSelector(selectSocketStatus);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(connectToSocket());
+
+    return () => {
+      if (connectionStatus === 'connecting') {
+        dispatch(disconnectFromSocket());
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (connectionStatus === 'connecting') {
+      dispatch(fetchTickers());
+    }
+  }, [dispatch, connectionStatus]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppRouter />
     </div>
   );
 }
