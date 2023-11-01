@@ -1,0 +1,36 @@
+@import "../../style_utils/utils";
+
+$size: 2.5em;
+$timing: 1.5s;
+
+.width {
+  width: $size;
+  height: $size;
+  border: $size/6 solid $lighter-gray;
+  border-radius: 50%;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: $size/6 solid transparent;
+    border-left-color: $orange;
+    margin: -$size/6;
+    animation: rotation $timing cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  }
+}
+
+.Loader {
+  @extend .width;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(3turn);
+  }
+}

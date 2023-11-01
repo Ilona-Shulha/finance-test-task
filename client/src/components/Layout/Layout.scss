@@ -1,0 +1,70 @@
+@import "../../style_utils/utils";
+
+.Layout {
+  padding-top: $header-top;
+  height: 100vh;
+  
+  &__header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: $header-top;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $bg-color;
+    padding: 0 $block-padding;
+  }
+  
+  &__header-link {
+    font-size: 32px;
+    font-weight: 700;
+    color: $light-gray;
+  }
+
+  &__link {
+    color: $light-gray;
+    font-weight: 800;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all .3s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: transparent;
+      transition: all .3s ease;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+    &:hover.Layout__link::after {
+      background-color: #fff;
+    }
+  }
+
+  &__link.active::after {
+    background-color: $light-gray;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-color;
+    font-weight: 700;
+    color: $light-gray;
+    height: $header-top;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../style_utils/utils";
+
+.Input {
+  position: relative;
+  max-width: 550px;
+
+  &__field {
+    width: 100%;
+    padding: 7px;
+    background-color: $light-gray;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    color: $text-color;
+
+    &:focus {
+      outline-color: $gray;
+    }
+  }
+
+  &__reset-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background: url(../../imgs/reset.svg) no-repeat center;
+  }
+}

@@ -1,0 +1,7 @@
+.Tickers {
+  position: relative;
+
+  li:not(:last-of-type) {
+    margin-bottom: 2px;
+  }
+}

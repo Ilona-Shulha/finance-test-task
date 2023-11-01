@@ -1,0 +1,49 @@
+@import "../../style_utils/utils";
+
+.TickerPage {
+  padding-top: 15px;
+  margin-left: $block-padding;
+  max-width: 550px;
+
+  &__title {
+    margin-bottom: 15px;
+    color: $text-color;
+  }
+
+  &__shortInfo {
+    background-color: $light-gray;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    padding: 7px;
+    margin-bottom: 10px;
+
+    .TickerInfo {
+      text-align: left;
+    }
+  }
+
+  &__info-point {
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__error {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $bg-color;
+  }
+
+  & .error-link {
+    text-decoration: underline;
+    transition: all .3s ease;
+    color: $gray;
+
+    &:hover {
+      color: $bg-color;
+    }
+  }
+}

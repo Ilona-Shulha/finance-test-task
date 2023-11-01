@@ -1,0 +1,11 @@
+@import "../../style_utils/utils";
+
+.NotFoundPage {
+  &__img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: calc(100vh - 200px);
+    object-fit: contain;
+  }
+}

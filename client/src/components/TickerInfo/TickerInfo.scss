@@ -1,0 +1,30 @@
+@import "../../style_utils/utils";
+
+$cell-width: 60px;
+
+.TickerInfo {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 15px;
+  margin-left: auto;
+  text-align: right;
+
+  &__change {
+    width: $cell-width;
+  }
+
+  &__change-percent {
+    width: $cell-width;
+  }
+
+  &__dividend {
+    width: $cell-width;
+  }
+}
+.rising {
+  color: $green;
+}
+
+.falling {
+  color: $red;
+}

@@ -1,0 +1,14 @@
+@import "../../style_utils/utils";
+
+.MainPage {
+  padding-top: 15px;
+  margin-left: $block-padding;
+
+  .Input {
+    margin-bottom: 10px;
+  }
+
+  &__loader {
+    padding: 150px 0 0 250px ;
+  }
+}

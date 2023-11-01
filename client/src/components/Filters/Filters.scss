@@ -1,0 +1,31 @@
+@import "../../style_utils/utils";
+
+.Filters {
+  margin-bottom: 15px;
+
+  &__losing.active, &__losing:hover {
+    font-weight: 700;
+    color: $red;
+  }
+  
+  &__all.active, &__all:hover {
+    font-weight: 700;
+    color: $bg-color;
+  }
+
+  &__profitable.active, &__profitable:hover {
+    font-weight: 700;
+    color: $green;
+  }
+}
+
+.toggle{
+  text-decoration: underline;
+  transition: all .3s ease;
+  color: $gray;
+  font-weight: 700;
+
+  &:not(:first-of-type) {
+    margin-left: 20px;
+  }
+}
